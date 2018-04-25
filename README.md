@@ -31,3 +31,21 @@
 
 #### Question 10
 - The average price on all 'Fish and other seafood' products?
+
+#### Question 11 
+- How many different series_title 1 subject is there?
+
+#### Question 12
+- Which food product is the most testet?
+
+#### Question 13
+- Which year was the sum of all food products highest?
+
+#### Question 14
+- Make a graph and show the sum of each food products? (highest)
+
+#### Question 15
+- Which year was the sum of all food products lowest?
+
+#### Question 16
+- Make a graph and show the sum of each food products (lowest)

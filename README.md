@@ -49,3 +49,15 @@
 
 #### Question 16
 - Make a graph and show the sum of each food products (lowest)
+
+#### Question 17
+- The average price on all 'Fruit' products?
+
+#### Question 18
+- The average price on all 'Vegetables' products?
+
+#### Question 19
+- How much is the difference between the average price on 'fruit and vegetables' products?
+
+#### Question 20
+- Make a graph that shows the difference

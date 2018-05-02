@@ -1,6 +1,13 @@
 # Project in Python by Emil, Lasse, Xu og Menja
 
-##Food Price Index for New Zealand
+### Dataset is from this site: 
+### http://archive.stats.govt.nz/tools_and_services/releases_csv_files/csv-files-for-infoshare.aspx
+
+### We have used the dataset: Food Price Index: March 2018
+### Download files:
+### https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-index-numbers-csv-tables.csv.csv
+###  
+
 
 #### Question 1
 - How many food products have been testet?
@@ -61,3 +68,7 @@
 
 #### Question 20
 - Make a graph that shows the difference
+
+
+####Bokeh (library) 
+####Webserver 

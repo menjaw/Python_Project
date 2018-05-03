@@ -1,6 +1,6 @@
 import csv
 
-with open('food-price-index-mar18-weighted-average-prices-csv-tables.csv.csv', newline='') as fp:
+with open('food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv', newline='') as fp:
     reader = csv.reader(fp, delimiter=',', quotechar='"')
     header_row = next(reader)
     for row in reader:

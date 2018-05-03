@@ -1,19 +1,25 @@
 # Project in Python by Emil, Lasse, Xu og Menja
 
 ### Dataset is from this site: 
-### http://archive.stats.govt.nz/tools_and_services/releases_csv_files/csv-files-for-infoshare.aspx
+#### http://archive.stats.govt.nz/tools_and_services/releases_csv_files/csv-files-for-infoshare.aspx
 
-### We have used the dataset: Food Price Index: March 2018
+#### We have used the dataset: Food Price Index: March 2018
 ### Download files:
-### https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-index-numbers-csv-tables.csv.csv
-### https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv 
+#### https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-index-numbers-csv-tables.csv.csv
+#### https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv 
+
+
+## Getting started:
+#### import pandas as pd
+#### import matplotlib as plt
+
 
 
 #### Question 1
 - How many food products have been testet?
 
 #### Question 2
-- How many times have each food been tested?
+- How many times have each been tested?
 
 #### Question 3
 - In which period are the food products testet? (years?, months?, days?)

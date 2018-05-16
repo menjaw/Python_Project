@@ -21,12 +21,11 @@ def total_products_investigated():
 
 def single_product_investigated():
     """Question 2 - How many times have each product been tested?"""
-
     # Put columns together
-    amount = pd.DataFrame(data, columns=['Product', 'Amount'])
+    frame = pd.DataFrame(data, columns=['Product', 'Amount'])
 
-    result = amount.groupby(['Product']).count()
-    return result
+    amount = frame.groupby(['Product']).count()
+    return amount
 
 
 def year_of_cheapest_tuna():
@@ -37,17 +36,49 @@ def year_of_cheapest_tuna():
     return lowest
 
 
+def most_cheapest_product():
+    """Question 4 - Show the most cheapest product"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price'])
+    cheapest = frame.sort_values(by='Price', ascending=True).head(1)
+    return cheapest
+
+
+def most_expensive_product():
+    """Question 5 - Show the most cheapest product"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price'])
+    expensive = frame.sort_values(by='Price', ascending=False).head(1)
+    return expensive
+
+
+def top_10_cheapest_products():
+    """Question 6 - Show the top 10 cheapest food products"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price'])
+    filtered_frame = frame.drop_duplicates('Product').nsmallest(10, 'Price')
+    return filtered_frame
+
+
+def top_10_most_expensive_products():
+    """Question 7 - Show the top 10 most expensive food products"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price'])
+    filtered_frame = frame.drop_duplicates('Product').nlargest(10, 'Price')
+    return filtered_frame
+
 
 """RUN THE METHODS"""
 print("The total amount that have been tested is {} products".format(total_products_investigated()))
+print(single_product_investigated())
 print(year_of_cheapest_tuna())
+print(most_cheapest_product())
+print(most_expensive_product())
+print(top_10_cheapest_products())
+print(top_10_most_expensive_products())
 
 
 
 
 
 """
-#---------------------------TEST OTHER POSSIBILITIES---------------------------------------------
+#---------------------------TEST OTHER POSSIBILITIES NOT IN USE---------------------------------------------
 period = df['Series_reference'][0:10].str.split(',')
 print(period)
 

@@ -32,33 +32,41 @@ def year_of_cheapest_tuna():
     """Question 3 - When was 'Tuna - canned' cheapest?"""
     frame = pd. DataFrame(data, columns=['Product', 'Price', 'Period'])
     tuna = frame[df.Series_title_1 == "Tuna - canned (supermarket only), 185g"]
-    lowest = tuna.sort_values(by="Price").head(1)
-    return lowest
+    cheapest = tuna.sort_values(by="Price").head(1)
+    return cheapest
+
+
+def year_of_most_expensive_tuna():
+    """Question 4 - When was 'Tuna - canned' cheapest?"""
+    frame = pd. DataFrame(data, columns=['Product', 'Price', 'Period'])
+    tuna = frame[df.Series_title_1 == "Tuna - canned (supermarket only), 185g"]
+    expensive = tuna.sort_values(by="Price", ascending=False).head(1)
+    return expensive
 
 
 def most_cheapest_product():
-    """Question 4 - Show the most cheapest product"""
+    """Question 5 - Show the most cheapest product"""
     frame = pd.DataFrame(data, columns=['Product', 'Price'])
     cheapest = frame.sort_values(by='Price', ascending=True).head(1)
     return cheapest
 
 
 def most_expensive_product():
-    """Question 5 - Show the most cheapest product"""
+    """Question 6 - Show the most cheapest product"""
     frame = pd.DataFrame(data, columns=['Product', 'Price'])
     expensive = frame.sort_values(by='Price', ascending=False).head(1)
     return expensive
 
 
 def top_10_cheapest_products():
-    """Question 6 - Show the top 10 cheapest food products"""
+    """Question 7 - Show the top 10 cheapest food products"""
     frame = pd.DataFrame(data, columns=['Product', 'Price'])
     filtered_frame = frame.drop_duplicates('Product').nsmallest(10, 'Price')
     return filtered_frame
 
 
 def top_10_most_expensive_products():
-    """Question 7 - Show the top 10 most expensive food products"""
+    """Question 8 - Show the top 10 most expensive food products"""
     frame = pd.DataFrame(data, columns=['Product', 'Price'])
     filtered_frame = frame.drop_duplicates('Product').nlargest(10, 'Price')
     return filtered_frame
@@ -66,8 +74,9 @@ def top_10_most_expensive_products():
 
 """RUN THE METHODS"""
 print("The total amount that have been tested is {} products".format(total_products_investigated()))
-print(single_product_investigated())
+#print(single_product_investigated())
 print(year_of_cheapest_tuna())
+print(year_of_most_expensive_tuna())
 print(most_cheapest_product())
 print(most_expensive_product())
 print(top_10_cheapest_products())

@@ -4,12 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/tsv_dataset_file.py" line="30" mnemonic="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ad532d5b-94e2-4b7e-9110-fa0052ed486e" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change beforePath="$PROJECT_DIR$/csv_dataset_file.py" afterPath="$PROJECT_DIR$/csv_dataset_file.py" />
-      <change beforePath="$PROJECT_DIR$/tsv_dataset_file.py" afterPath="$PROJECT_DIR$/tsv_dataset_file.py" />
-    </list>
+    <list default="true" id="ad532d5b-94e2-4b7e-9110-fa0052ed486e" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

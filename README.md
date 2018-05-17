@@ -41,7 +41,7 @@
  (virtuelt environment)
 
 ## Dataset 1 (index-numbers)
-#### Question 1 - What is the sum of all prices per category?
+#### Question 1- What is the sum of all prices per category?
 
 
 ## Dataset 2 (weighted-average-prices)
@@ -273,13 +273,13 @@
 
 
 #### Question 11- What was the price for 1 kg carrots in marts 2012?
-##### Answer: In March 2012 the price for 1 kg carrots was 1,88 dollars
+##### Answer: In March 2012 the price for 1 kg carrots was 1,88 dollars.
 
 #### Question 12- What was the price for 1 kg carrots in marts 2013?
-##### Answer: In March 2013 the price for 1 kg carrots was 2,14 dollars
+##### Answer: In March 2013 the price for 1 kg carrots was 2,14 dollars.
 
-#### Question 13- In which period was 1 kg kiwi cheapestand what was the price? (Show top 10)
+#### Question 13- In which period was 1 kg kiwi cheapestand what was the price (Show top 10)?
 ##### Answer:
 
-#### Question 14- In which period was 1 kg kiwi most expensive and what was the price? (Show top 10)
+#### Question 14- In which period was 1 kg kiwi most expensive and what was the price (Show top 10)?
 ##### Answer:

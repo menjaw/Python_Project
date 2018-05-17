@@ -88,12 +88,22 @@ def average_price_bananas_2013():
     return average
 
 
-def 
+def price_for_carrots_march_2012():
+    """Question 10 - What was the average price for 1 kg bananas in 2012?"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
+    carrot = frame[(df.Series_title_1 == "Carrots, 1kg") & (df.Period == 2012.03)]
+    return carrot
+
+
+def price_for_carrots_march_2013():
+    """Question 11 - What was the average price for 1 kg bananas in 2013?"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
+    carrot = frame[(df.Series_title_1 == "Carrots, 1kg") & (df.Period == 2013.03)]
+    return carrot
 
 
 """RUN THE METHODS
 print("The total amount that have been tested is {} products".format(total_products_investigated()))
-#print(single_product_investigated())
 print(year_of_cheapest_tuna())
 print(year_of_most_expensive_tuna())
 print(most_cheapest_product())
@@ -101,11 +111,14 @@ print(most_expensive_product())
 print(top_10_cheapest_products())
 print(top_10_most_expensive_products())
 print(average_price_bananas_2012())
-"""
-
+print(single_product_investigated())
 print(average_price_bananas_2012())
 print(average_price_bananas_2013())
+"""
 
+
+print(price_for_carrots_march_2012())
+print(price_for_carrots_march_2013())
 
 
 

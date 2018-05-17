@@ -25,7 +25,7 @@ def category_amount_investigated():
 
 
 def total_price_for_each_category():
-    """What is the sum of all prices per category?"""
+    """Question 2 - What is the sum of all prices per category?"""
     price = pd.DataFrame(data, columns=['Category', 'Prices'])
 
     result = price.groupby(['Category']).mean()
@@ -33,7 +33,7 @@ def total_price_for_each_category():
 
 
 def group_product_by_year():
-    """For what years have the fruit and vegetables been tested?"""
+    """Question 3 - For what years have the fruit and vegetables been tested?"""
     period = pd.DataFrame(data, columns=['Category', 'Period'])[0:10]
     result = df.loc[df['Series_title_1'] == 'Fruit and vegetables']
     return result

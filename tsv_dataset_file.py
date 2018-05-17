@@ -72,7 +72,26 @@ def top_10_most_expensive_products():
     return filtered_frame
 
 
-"""RUN THE METHODS"""
+def average_price_bananas_2012():
+    """Question 9 - What was the average price for 1 kg bananas in 2012?"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
+    banana = frame[(df.Series_title_1 == "Bananas, 1kg") & (df.Period >= 2012.01) & (df.Period < 2013.01)]
+    average = banana['Price'].mean()
+    return average
+
+
+def average_price_bananas_2013():
+    """Question 10 - What was the average price for 1 kg bananas in 2012?"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
+    banana = frame[(df.Series_title_1 == "Bananas, 1kg") & (df.Period >= 2013.01) & (df.Period < 2014.01)]
+    average = banana['Price'].mean()
+    return average
+
+
+def 
+
+
+"""RUN THE METHODS
 print("The total amount that have been tested is {} products".format(total_products_investigated()))
 #print(single_product_investigated())
 print(year_of_cheapest_tuna())
@@ -81,7 +100,11 @@ print(most_cheapest_product())
 print(most_expensive_product())
 print(top_10_cheapest_products())
 print(top_10_most_expensive_products())
+print(average_price_bananas_2012())
+"""
 
+print(average_price_bananas_2012())
+print(average_price_bananas_2013())
 
 
 

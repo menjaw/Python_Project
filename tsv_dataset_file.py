@@ -102,6 +102,16 @@ def price_for_carrots_march_2013():
     return carrot
 
 
+def top_10_cheapest_kiwi():
+    """In which period was 1 kg kiwi cheapestand what was the price? (Show top 10)"""
+    return
+
+
+def top_10_most_expensive_kiwi():
+    """In which period was 1 kg kiwi most expensive and what was the price? (Show top 10)"""
+    return
+
+
 """RUN THE METHODS"""
 print("The total amount that have been tested is {} products".format(total_products_investigated()))
 print(single_product_investigated())

@@ -15,7 +15,7 @@ data = {
 
 #Methods
 def category_amount_investigated():
-    """Question 1 - How many times have each category been investigated?"""
+    """NOT USED: Question 1 - How many times have each category been investigated?"""
 
     # Put columns together
     amount = pd.DataFrame(data, columns=['Category', 'Amount'])
@@ -33,7 +33,7 @@ def total_price_for_each_category():
 
 
 def group_product_by_year():
-    """Question 3 - For what years have the fruit and vegetables been tested?"""
+    """NOT USED: Question 3 - For what years have the fruit and vegetables been tested?"""
     period = pd.DataFrame(data, columns=['Category', 'Period'])[0:10]
     result = df.loc[df['Series_title_1'] == 'Fruit and vegetables']
     return result
@@ -43,6 +43,6 @@ print(pd.__version__)
 
 
 """------RUN METHODS------"""
-print(category_amount_investigated())
+#print(category_amount_investigated())
 print(total_price_for_each_category())
 #print(group_product_by_year())

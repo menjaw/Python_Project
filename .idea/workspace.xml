@@ -18,6 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Python_Project$csv_dataset_file.coverage" NAME="csv_dataset_file Coverage Results" MODIFIED="1526595769707" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Project$run.coverage" NAME="run Coverage Results" MODIFIED="1525267896055" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Project$not_working.coverage" NAME="not_working Coverage Results" MODIFIED="1525268509653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Python_Project$try_read_csv.coverage" NAME="try_read_csv Coverage Results" MODIFIED="1525345144408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -29,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="csv_dataset_file.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="csv_dataset_file.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/csv_dataset_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -51,11 +52,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tsv_dataset_file.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="tsv_dataset_file.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tsv_dataset_file.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="98" column="74" lean-forward="true" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
+            <state relative-caret-position="378">
+              <caret line="105" column="85" lean-forward="false" selection-start-line="105" selection-start-column="85" selection-end-line="105" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -83,8 +84,8 @@
         <option value="$PROJECT_DIR$/not_working.py" />
         <option value="$PROJECT_DIR$/weight_file.py" />
         <option value="$PROJECT_DIR$/try_read_csv.py" />
-        <option value="$PROJECT_DIR$/csv_dataset_file.py" />
         <option value="$PROJECT_DIR$/tsv_dataset_file.py" />
+        <option value="$PROJECT_DIR$/csv_dataset_file.py" />
       </list>
     </option>
   </component>
@@ -147,7 +148,26 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.tsv_dataset_file">
+  <component name="RunManager" selected="Python.csv_dataset_file">
+    <configuration name="csv_dataset_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Python_Project" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/csv_dataset_file.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="not_working" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -162,25 +182,6 @@
       <module name="Python_Project" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\T420s\OneDrive\Dokumenter\Datamatiker\4.Semester\Python\Python_projects\Python_Project\tsv_dataset_file.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-    </configuration>
-    <configuration name="run" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Python_Project" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\T420s\OneDrive\Dokumenter\Datamatiker\4.Semester\Python\Python_projects\Python_Project\csv_dataset_file.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -244,19 +245,19 @@
       <option name="MODULE_MODE" value="false" />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.run" />
-      <item index="1" class="java.lang.String" itemvalue="Python.not_working" />
-      <item index="2" class="java.lang.String" itemvalue="Python.try_read_csv" />
-      <item index="3" class="java.lang.String" itemvalue="Python.weight_file" />
-      <item index="4" class="java.lang.String" itemvalue="Python.tsv_dataset_file" />
+      <item index="0" class="java.lang.String" itemvalue="Python.not_working" />
+      <item index="1" class="java.lang.String" itemvalue="Python.try_read_csv" />
+      <item index="2" class="java.lang.String" itemvalue="Python.weight_file" />
+      <item index="3" class="java.lang.String" itemvalue="Python.tsv_dataset_file" />
+      <item index="4" class="java.lang.String" itemvalue="Python.csv_dataset_file" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.tsv_dataset_file" />
-        <item index="1" class="java.lang.String" itemvalue="Python.try_read_csv" />
-        <item index="2" class="java.lang.String" itemvalue="Python.weight_file" />
-        <item index="3" class="java.lang.String" itemvalue="Python.not_working" />
-        <item index="4" class="java.lang.String" itemvalue="Python.run" />
+        <item index="0" class="java.lang.String" itemvalue="Python.csv_dataset_file" />
+        <item index="1" class="java.lang.String" itemvalue="Python.tsv_dataset_file" />
+        <item index="2" class="java.lang.String" itemvalue="Python.try_read_csv" />
+        <item index="3" class="java.lang.String" itemvalue="Python.weight_file" />
+        <item index="4" class="java.lang.String" itemvalue="Python.not_working" />
       </list>
     </recent_temporary>
   </component>
@@ -379,18 +380,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/csv_dataset_file.py">
+    <entry file="file://$PROJECT_DIR$/tsv_dataset_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="43" column="0" lean-forward="true" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        <state relative-caret-position="378">
+          <caret line="105" column="85" lean-forward="false" selection-start-line="105" selection-start-column="85" selection-end-line="105" selection-end-column="85" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tsv_dataset_file.py">
+    <entry file="file://$PROJECT_DIR$/csv_dataset_file.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="98" column="74" lean-forward="true" selection-start-line="98" selection-start-column="74" selection-end-line="98" selection-end-column="74" />
+        <state relative-caret-position="340">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>

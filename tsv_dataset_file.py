@@ -15,6 +15,7 @@ data = {
     'Amount': 0
 }
 
+
 @app.route('/')
 def show_data():
     return render_template('index.html', data=df.to_html())
@@ -35,6 +36,7 @@ def single_product_investigated():
 
     amount = frame.groupby(['Product']).count()
     return render_template('index.html', data=amount.to_html())
+
 
 @app.route('/3')
 def year_of_cheapest_tuna():
@@ -131,10 +133,10 @@ def top_10_most_expensive_kiwi():
     return
 
 
-app.run(debug=True, port=3000)
+app.run(debug=True, port=3090)
 
 
-"""RUN THE METHODS
+"""RUN THE METHODS IN COMMAND LINE
 print("The total amount that have been tested is {} products".format(total_products_investigated()))
 print(single_product_investigated())
 print(year_of_cheapest_tuna())

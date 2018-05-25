@@ -10,10 +10,7 @@
 #### We have used the dataset: Food Price Index: March 2018
 
 
-
-### Download files:
-
-#### https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-index-numbers-csv-tables.csv.csv
+### Download dataset:
 
 #### https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv 
 
@@ -22,11 +19,9 @@
 
 
 ## Getting started:
+(try_file.py er en test fil som ikke benyttes til andet end at afprøve kode)
 
 #### import pandas as pd
-
-#### import matplotlib as plt
-
 
 
 

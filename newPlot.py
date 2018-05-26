@@ -63,7 +63,7 @@ def show_data():
 
     ## pygal
     pie_chart = pygal.Pie()
-    pie_chart.title = 'Compare food price in 2017 in %'
+    pie_chart.title = 'Comparison food price in 2017 in %'
     pie_chart.add(a_title, a_pct)
     pie_chart.add(b_title, b_pct)
     pie_chart.add(c_title, c_pct)

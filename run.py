@@ -1,9 +1,10 @@
 import pandas as pd
 import browser_view as bv
+import line_chart_plot as lcp
 
 df = pd.read_csv('food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv', sep='\t')
 
-#Initilize program from App
+# Initilize program from App
 bv.initialize()
 
 
@@ -77,7 +78,8 @@ def most_expensive_product():
 def top_10_cheapest_products():
     """Question 7 - Show the top 10 cheapest food products"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
-    filtered_frame = frame.sort_values(by='Price', ascending=True).drop_duplicates(subset='Product').head(10)
+    filtered_frame = frame.sort_values(
+        by='Price', ascending=True).drop_duplicates(subset='Product').head(10)
     return bv.render_template('index.html', data=filtered_frame.to_html())
 
 
@@ -85,7 +87,8 @@ def top_10_cheapest_products():
 def top_10_most_expensive_products():
     """Question 8 - Show the top 10 most expensive food products"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
-    filtered_frame = frame.sort_values(by='Price', ascending=False).drop_duplicates('Product').head(10)
+    filtered_frame = frame.sort_values(
+        by='Price', ascending=False).drop_duplicates('Product').head(10)
     return bv.render_template('index.html', data=filtered_frame.to_html())
 
 
@@ -93,7 +96,8 @@ def top_10_most_expensive_products():
 def average_price_bananas_2012():
     """Question 9 - What was the average price for 1 kg bananas in 2012?"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
-    banana = frame[(df.Series_title_1 == "Bananas, 1kg") & (df.Period >= 2012.01) & (df.Period < 2013.01)]
+    banana = frame[(df.Series_title_1 == "Bananas, 1kg") & (
+        df.Period >= 2012.01) & (df.Period < 2013.01)]
     average = banana['Price'].mean()
     return bv.render_template('index.html', data=average.to_html())
 
@@ -102,7 +106,8 @@ def average_price_bananas_2012():
 def average_price_bananas_2013():
     """Question 10 - What was the average price for 1 kg bananas in 2012?"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
-    banana = frame[(df.Series_title_1 == "Bananas, 1kg") & (df.Period >= 2013.01) & (df.Period < 2014.01)]
+    banana = frame[(df.Series_title_1 == "Bananas, 1kg") & (
+        df.Period >= 2013.01) & (df.Period < 2014.01)]
     average = banana['Price'].mean()
     return bv.render_template('index.html', data=average.to_html())
 
@@ -122,6 +127,7 @@ def price_for_carrots_march_2013():
     carrot = frame[(df.Series_title_1 == "Carrots, 1kg") & (df.Period == 2013.03)]
     return bv.render_template('index.html', data=carrot.to_html())
 
+
 @bv.app.route('/13')
 def top_10_cheapest_kiwi():
     """In which period was 1 kg kiwi cheapest and what was the price? (Show top 10)"""
@@ -134,8 +140,18 @@ def top_10_most_expensive_kiwi():
     return
 
 
-bv.run_program()
+@bv.app.route('/18')
+def line_chart_displayed():
+    """Function which uses the LinePlot class in line_chart_plot.py """
+    # Creates a new instance of the LinePlot(Self) and binds it to NewLCI
+    newLCI = lcp.LinePlot()
+    # linceCC uses the create_line_chart method to create a new chart
+    lineCC = newLCI.create_line_chart()
+    # renders the line chart
+    return lineCC.render_response()
 
+
+bv.run_program()
 
 
 """RUN THE METHODS IN COMMAND LINE

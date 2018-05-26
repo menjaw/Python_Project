@@ -1,6 +1,7 @@
 import pandas as pd
 from flask import *
 
+
 df = pd.read_csv('food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv', sep='\t')
 
 #Initilize program from App

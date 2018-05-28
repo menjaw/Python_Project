@@ -22,6 +22,8 @@
 (try_file.py er en test fil som ikke benyttes til andet end at afprøve kode)
 
 #### import pandas as pd
+#### from flask import Flask
+#### import pygal
 
 
 
@@ -30,9 +32,9 @@
 ## TO DO
 
 
-#### Work with Bokeh (library) 
+#### Work with Pygal (library) 
 
-#### Make a Webserver and visual showing of the data
+#### Visual showing of the data
  (virtuelt environment)
 
 ## Dataset 1 (index-numbers)

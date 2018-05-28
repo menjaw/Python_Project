@@ -1,6 +1,7 @@
 import pandas as pd
 import browser_view as bv
 import line_chart_plot as lcp
+import pygal
 
 df = pd.read_csv('food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv', sep='\t')
 
@@ -16,6 +17,12 @@ data = {
     'Product': df['Series_title_1'],
     'Amount': 0
 }
+
+frame = pd.DataFrame(data, columns=['Price', 'Period'])
+tomatoes = frame[df.Series_title_1 == "Tomatoes, 1kg"]
+cabbage = frame[df.Series_title_1 == "Cabbage, 1kg"]
+lettuce = frame[df.Series_title_1 == "Lettuce, 1kg"]
+oranges = frame[df.Series_title_1 == "Oranges, 1kg"]
 
 
 @bv.app.route('/')
@@ -43,7 +50,7 @@ def single_product_investigated():
 @bv.app.route('/3')
 def year_of_cheapest_tuna():
     """Question 3 - When was 'Tuna - canned' cheapest?"""
-    frame = pd. DataFrame(data, columns=['Product', 'Price', 'Period'])
+    frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
     tuna = frame[df.Series_title_1 == "Tuna - canned (supermarket only), 185g"]
     cheapest = tuna.sort_values(by="Price").head(1)
     return bv.render_template('index.html', data=cheapest.to_html())
@@ -116,7 +123,7 @@ def average_price_bananas_2013():
 def price_for_carrots_march_2012():
     """Question 11 - What was the price for 1 kg carrots in marts 2012?"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
-    carrot = frame[(df.Series_title_1 == "Carrots, 1kg") & (df.Period == 2012.03)]
+    carrot = frame[(df.Series_title_1 == "Carrots, 1kg") & (df.Period == 2013.03)]
     return bv.render_template('index.html', data=carrot.to_html())
 
 
@@ -146,7 +153,7 @@ def line_chart_displayed():
     # Creates a new instance of the LinePlot(Self) and binds it to NewLCI
     newLCI = lcp.LinePlot()
     # linceCC uses the create_line_chart method to create a new chart
-    lineCC = newLCI.create_line_chart()
+    lineCC = newLCI.create_line_chart(title='Pris historik', period=tomatoes['Period'].iloc[0:10])
     # renders the line chart
     return lineCC.render_response()
 

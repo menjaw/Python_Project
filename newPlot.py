@@ -1,7 +1,6 @@
 import pandas as pd
 from flask import Flask, render_template
 import pygal
-import web_view as wv
 #import piePlot
 
 """Series_reference	Period	Data_value	STATUS	UNITS	Subject	Group	Series_title_1"""
@@ -9,7 +8,7 @@ import web_view as wv
 df = pd.read_csv('food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv', sep='\t')
 
 #Initilize program from App
-wv.initialize()
+app = Flask(__name__)
 
 
 @app.route('/plot')
@@ -62,7 +61,7 @@ def show_data():
     i_title = '1 kg beans - Price: {}$'.format(i_res)
     j_title = '1 kg avocado - Price: {}$'.format(j_res)
 
-    # pygal
+    ## pygal
     pie_chart = pygal.Pie()
     pie_chart.title = 'Comparison food price in 2017 in %'
     pie_chart.add(a_title, a_pct)
@@ -76,7 +75,7 @@ def show_data():
     pie_chart.add(i_title, i_pct)
     pie_chart.add(j_title, j_pct)
 
-    # return render_template('pie.html', data = lst_pct, name = title)
+    #return render_template('pie.html', data = lst_pct, name = title)
     return pie_chart.render_response()
 
 
@@ -86,6 +85,5 @@ def calculator(cat, period):
     organges_price = float(organges_df['Data_value'].values)
     return organges_price
 
-
-wv.run_program()
+app.run(debug=True, port=3000)
 

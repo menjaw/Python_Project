@@ -1,5 +1,5 @@
 import run as r
-from flask import Flask, render_template
+from flask import Flask
 import pygal
 
 
@@ -7,7 +7,7 @@ import pygal
 app = Flask(__name__)
 
 
-@app.route('/box-cheapest-fruit')
+@app.route('/box-fruit-2013')
 def show_box_fruit_2013():
     box_plot = pygal.Box()
     box_plot.title = 'Fruit prices in 2013'

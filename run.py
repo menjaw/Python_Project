@@ -59,7 +59,7 @@ def year_of_most_expensive_tuna():
 
 @wv.app.route('/5')
 def most_cheapest_product():
-    """Question 5 - Show the most cheapest product"""
+    """Question 5 - Show the most cheapest products"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
     cheapest = frame.sort_values(by='Price', ascending=True).head(1)
     return wv.render_template('index.html', data=cheapest.to_html())
@@ -67,7 +67,7 @@ def most_cheapest_product():
 
 @wv.app.route('/6')
 def most_expensive_product():
-    """Question 6 - Show the most expensive product"""
+    """Question 6 - Show the most expensive products"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
     expensive = frame.sort_values(by='Price', ascending=False).head(1)
     return wv.render_template('index.html', data=expensive.to_html())

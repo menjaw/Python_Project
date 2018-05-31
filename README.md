@@ -34,11 +34,6 @@
 - python run.py
 
 
-## Dataset 1 (index-numbers)
-#### Question 1
-- What is the sum of all prices per category?
-
-
 ## Dataset 2 (weighted-average-prices)
 #### Question 1
 - How many products have been tested?

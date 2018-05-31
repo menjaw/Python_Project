@@ -202,7 +202,7 @@
 |Wholegrain bread, sliced, 700g                        | 134|
 |Yoghurt - flavoured, 150g pottle (supermarket o...    | 142|
 
-![Question 2] (img/product_count.png)
+![Question 2](img/product_count.png)
 
 #### Question 3
 - When was 'Tuna - canned' cheapest?

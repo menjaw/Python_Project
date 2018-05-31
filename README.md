@@ -22,11 +22,17 @@
 (try_file.py er en test fil som ikke benyttes til andet end at afprøve kode)
 
 #### import pandas as pd
+- pip install pandas
 #### from flask import Flask
+- pip install Flask
 #### import pygal
+- pip install pygal
+- pip install pygal_maps_world 
 
 
-
+####
+#### Run program from terminal:
+- python run.py
 
 
 ## TO DO
@@ -202,7 +208,6 @@
 |Wholegrain bread, sliced, 700g                        | 134|
 |Yoghurt - flavoured, 150g pottle (supermarket o...    | 142|
 
-![Question 2](img/product_count.png)
 
 #### Question 3
 - When was 'Tuna - canned' cheapest?
@@ -281,9 +286,32 @@
 ##### Answer: In March 2013 the price for 1 kg carrots was 2,14 dollars.
 
 #### Question 13
-- In which period was 1 kg kiwi cheapestand what was the price (Show top 10)?
-##### Answer:
+- Show prices for kiwi in 2013.
+
 
 #### Question 14
-- In which period was 1 kg kiwi most expensive and what was the price (Show top 10)?
-##### Answer:
+- In which period was 1 kg kiwi most expensive and what was the price? (Show top 10)
+
+
+#### Question 15
+- Show prices for apples in 2013
+
+
+#### Question 16
+- Show prices for bananas in 2013
+
+
+#### Question 17
+- Show prices for lettuce in 2013
+
+
+#### Question 18
+- Show the product prices in 2013
+
+
+#### Question 19
+- Show prices at canned food in 2017
+
+
+#### Question 20
+- Show how many times each product have been tested (ref question 2)

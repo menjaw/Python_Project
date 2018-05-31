@@ -1,6 +1,6 @@
 # Project in Python by Emil, Lasse, Xu og Menja
 
-
+## Read the Project_description.docx for all the details about the project
 
 ### Dataset is from this site: 
 
@@ -30,22 +30,8 @@
 - pip install pygal_maps_world 
 
 
-####
-#### Run program from terminal:
+### Run program from terminal:
 - python run.py
-
-
-## TO DO
-
-
-#### Work with Pygal (library) 
-
-#### Visual showing of the data
- (virtuelt environment)
-
-## Dataset 1 (index-numbers)
-#### Question 1
-- What is the sum of all prices per category?
 
 
 ## Dataset 2 (weighted-average-prices)

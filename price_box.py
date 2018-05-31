@@ -19,5 +19,13 @@ def show_box_fruit_2013():
     return box_plot.render_response()
 
 
+@app.route('/graph-tuna')
+def show_graph_tuna():
+    graph = pygal.Line()
+    graph.title('Price by year')
+    graph.x_label = [2007.06, 2008.01, 2008.02, 2008.03, 2008.04]
+    return graph.render_response()
+
+
 # run program
-app.run(debug=True, port=3000)
+#app.run(debug=True, port=3000)

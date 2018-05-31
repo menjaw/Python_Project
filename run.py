@@ -1,9 +1,10 @@
 import pandas as pd
 import web_view as wv
+import pygal
 
 df = pd.read_csv('food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv', sep='\t')
 
-#Initilize program from App
+# Initilize program from App
 wv.initialize()
 
 
@@ -45,7 +46,7 @@ def year_of_cheapest_tuna():
     frame = pd. DataFrame(data, columns=['Product', 'Price', 'Period'])
     tuna = frame[df.Series_title_1 == "Tuna - canned (supermarket only), 185g"]
     cheapest = tuna.sort_values(by="Price").head(1)
-    return wv.render_template('index.html', data=cheapest.to_html())
+    return "The year of cheapest tuna is: " + wv.render_template('index.html', data=cheapest.to_html())
 
 
 @wv.app.route('/4')
@@ -167,8 +168,70 @@ def lettuce_prices_2013():
     return wv.render_template('index.html', data=lettuce.to_html())
 
 
-#wv.run_program()
+@wv.app.route('/test')
+def test():
+    """Show prices for lettuce in 2013"""
+    frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
+    lettuce = frame[(df.Series_title_1 == "Soup, canned, 500g")
+                    & (df.Period >= 2017.01) & (df.Period < 2018.01)].sort_values(
+        by='Period')
+    return wv.render_template('index.html', data=lettuce.to_html())
 
+
+@wv.app.route('/box-fruit-2013')
+def box_fruit_2013():
+    """Show the product prices in 2013"""
+    box_plot = pygal.Box()
+    box_plot.title = 'Fruit prices in 2013'
+    box_plot.add('Kiwi, 1 kg', [1.90, 1.97, 2.00, 2.07, 2.32, 2.45, 3.16, 4.38, 4.73, 5.12, 5.96, 6.19])
+    box_plot.add('Apple, 1 kg', [2.25, 2.33, 2.37, 2.41, 2.56, 2.58, 2.72, 2.96, 3.24, 3.60, 3.81, 4.12])
+    box_plot.add('Banana, 1 kg', [2.53, 2.54, 2.55, 2.56, 2.64, 2.65, 2.67, 2.67, 2.67, 2.68, 2.78, 2.80])
+    box_plot.add('Lettuce, 1 kg', [2.55, 2.61, 2.77, 2.85, 3.07, 3.56, 3.65, 3.74, 4.23, 6.56, 6.73, 9.18])
+    box_plot.render()
+    return box_plot.render_response()
+
+
+@wv.app.route('/graph-canned-2017')
+def graph_canned_2017():
+    """Show prices at canned food in 2017"""
+    graph = pygal.Line()
+    graph.title = 'Prices on canned food in 2017'
+    graph.x_label = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
+                     "Aug", "Sep", "Oct", "Nov", "Dec"]
+    graph.add('Tuna, 185g', [2.52, 2.48, 2.50, 2.39, 2.60, 2.46, 2.53, 2.46, 2.39, 2.50, 2.58, 2.47])
+    graph.add('Peaches, 410g', [1.65, 1.64, 1.62, 1.53, 1.66, 1.57, 1.56, 1.65, 1.59, 1.39, 1.58, 1.44])
+    graph.add('Spaghetti, 420 g', [1.53, 1.56, 1.52, 1.40, 1.41, 1.45, 1.33, 1.47, 1.47, 1.42, 1.51, 1.50])
+    graph.add('Tomato sauce, 560g', [3.15, 2.96, 2.90, 2.58, 2.99, 2.82, 2.64, 2.84, 2.92, 2.71, 2.78, 2.84])
+    graph.add('Soup 500g', [3.46, 3.36, 3.18, 2.92, 2.91, 2.81, 2.79, 2.76, 2.72, 3.31, 3.42, 3.49])
+    return graph.render_response()
+
+
+@wv.app.route('/hist-product-count')
+def hist_product_count():
+    """Show how many times each product have been tested (ref question 2)"""
+    hist = pygal.Histogram()
+    hist.title = 'Count of how many time each product have been tested'
+    hist.add('Apples, 1kg', [(142, 0, 1)])
+    hist.add('Apricots, dried, 100g', [(81, 1, 2)])
+    hist.add('Avocado, 1kg', [(134, 2, 3)])
+    hist.add('Bacon - middle rashers, 700g', [(46, 3, 4)])
+    hist.add('Beef steak - blade, 1kg', [(142, 4, 5)])
+    hist.add('Berries, frozen, 500g', [(134, 5, 6)])
+    hist.add('Breakfast drink, 250ml, 6 pack', [(45, 6, 7)])
+    hist.add('Fresh herbs, packaged, chilled', [(6, 7, 8)])
+    return hist.render_response()
+
+
+@wv.app.route('/world-map')
+def show_map():
+    """Show the countries where the products have been tested"""
+    worldmap_chart = pygal.maps.world.World()
+    worldmap_chart.title = 'Food prices in the world'
+    worldmap_chart.add('New Zealand', ['nz'])
+    return worldmap_chart.render()
+
+
+wv.run_program()
 
 
 """RUN THE METHODS IN COMMAND LINE

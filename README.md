@@ -16,25 +16,17 @@
 
 
 
-
-
 ## Getting started:
-(try_file.py er en test fil som ikke benyttes til andet end at afprøve kode)
 
-#### import pandas as pd
-- pip install pandas
-#### from flask import Flask
-- pip install Flask
-#### import pygal
-- pip install pygal
-- pip install pygal_maps_world 
+### 1: run requirements.txt 
+- python -r requirements.txt
 
-
-### Run program from terminal:
+### 2: run program from terminal:
 - python run.py
 
+(try_file.py er en test fil som ikke benyttes til andet end at afprøve kode)
 
-## Dataset 2 (weighted-average-prices)
+## Dataset 1 (weighted-average-prices)
 #### Question 1
 - How many products have been tested?
 ##### Answer: 148 products has been tested

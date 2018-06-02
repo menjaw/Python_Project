@@ -3,8 +3,13 @@ import web_view as wv
 import pygal
 import plot as pt
 import questions as qst
+import webget
 
-df = pd.read_csv('food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv', sep='\t')
+url = 'https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv'
+file_name = "food-price.csv.tsv"
+webget.download(url,file_name)
+
+df = pd.read_csv(file_name, sep='\t')
 
 # Initilize program from App
 wv.initialize()
@@ -148,38 +153,23 @@ def test():
 
 @wv.app.route('/food_price_2017')
 def food_price_2017():
-    result = pt.exec_plot1(df)
+    result = pt.food_price_2017(df)
     return wv.Response(response=result.render(),content_type='image/svg+xml')
 
-@wv.app.route('/hist-product-count')
+@wv.app.route('/hist_product_count')
 def hist_product_count():
-    restult = pt.exec_plot2()
+    restult = pt.hist_product_count()
     return restult.render_response()
 
-@wv.app.route('/box-fruit-2013')
+@wv.app.route('/box_fruit_2013')
 def box_fruit_2013():
-    """Show the product prices in 2013"""
-    box_plot = pygal.Box()
-    box_plot.title = 'Fruit prices in 2013'
-    box_plot.add('Kiwi, 1 kg', [1.90, 1.97, 2.00, 2.07, 2.32, 2.45, 3.16, 4.38, 4.73, 5.12, 5.96, 6.19])
-    box_plot.add('Apple, 1 kg', [2.25, 2.33, 2.37, 2.41, 2.56, 2.58, 2.72, 2.96, 3.24, 3.60, 3.81, 4.12])
-    box_plot.add('Banana, 1 kg', [2.53, 2.54, 2.55, 2.56, 2.64, 2.65, 2.67, 2.67, 2.67, 2.68, 2.78, 2.80])
-    box_plot.add('Lettuce, 1 kg', [2.55, 2.61, 2.77, 2.85, 3.07, 3.56, 3.65, 3.74, 4.23, 6.56, 6.73, 9.18])
+    box_plot = pt.box_fruit_2013()
     box_plot.render()
     return box_plot.render_response()
 
-@wv.app.route('/graph-canned-2017')
+@wv.app.route('/graph_canned_2017')
 def graph_canned_2017():
-    """Show prices at canned food in 2017"""
-    graph = pygal.Line()
-    graph.title = 'Prices on canned food in 2017'
-    graph.x_label = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
-                     "Aug", "Sep", "Oct", "Nov", "Dec"]
-    graph.add('Tuna, 185g', [2.52, 2.48, 2.50, 2.39, 2.60, 2.46, 2.53, 2.46, 2.39, 2.50, 2.58, 2.47])
-    graph.add('Peaches, 410g', [1.65, 1.64, 1.62, 1.53, 1.66, 1.57, 1.56, 1.65, 1.59, 1.39, 1.58, 1.44])
-    graph.add('Spaghetti, 420 g', [1.53, 1.56, 1.52, 1.40, 1.41, 1.45, 1.33, 1.47, 1.47, 1.42, 1.51, 1.50])
-    graph.add('Tomato sauce, 560g', [3.15, 2.96, 2.90, 2.58, 2.99, 2.82, 2.64, 2.84, 2.92, 2.71, 2.78, 2.84])
-    graph.add('Soup 500g', [3.46, 3.36, 3.18, 2.92, 2.91, 2.81, 2.79, 2.76, 2.72, 3.31, 3.42, 3.49])
+    graph = pt.graph_canned_2017()
     return graph.render_response()
 
 @wv.app.route('/world-map')

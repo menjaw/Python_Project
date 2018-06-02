@@ -26,13 +26,13 @@ def exec_qst4(data,df):
     expensive = tuna.sort_values(by="Price", ascending=False).head(1)
     return expensive
 
-def excec_qst5(data):
+def exec_qst5(data):
     """Question 5 - Show the most cheapest products"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
     cheapest = frame.sort_values(by='Price', ascending=True).head(1)
     return cheapest
 
-def excec_qst6(data):
+def exec_qst6(data):
     """Question 6 - Show the most expensive products"""
     frame = pd.DataFrame(data, columns=['Product', 'Price', 'Period'])
     expensive = frame.sort_values(by='Price', ascending=False).head(1)

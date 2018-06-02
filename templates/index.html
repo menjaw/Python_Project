@@ -1,4 +1,42 @@
 {% block content %}
-<h1>{{name}}</h1>
-{{data | safe}}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+      <div id="nav">
+          <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/answers">Questions & Answers</a></li>
+          <li><a href="/plot">Plotting</a></li>
+          <li><a href="/info">Projekt Info</a></li>
+          <li><a href="/data">Show all data</a></li>
+          </ul>
+      </div>
+    
+      <h1>Welcome to the 30m Python project</h1>
+      <h2>Group 4 - Emil - Lasse - Menja - Xu</h2>
+      <img src="static/foods.jpg" style="width: 600px" />
+      <p>Lorem ipsum, også kendt som mumletekst, er en fyldtekst, som har været brugt i bogtrykkerkunsten siden 1500-tallet. <br><br>
+
+          Teksten bruges som fyldtekst, for at ordene ikke skal forstyrre det grafiske udtryk under selve layout-processen. <br><br>
+          
+          Fyldteksten kan genereres automatisk i flere moderne dtp-programmer som fx Adobe InDesign og Adobe Pagemaker. <br><br>
+          
+          Apples produkter som fx Keynote, Pages, iWeb osv. benytter også automatisk teksten "Lorem Ipsum Dolor Sit Amet" som fyldtekst. <br><br>
+          
+          Selv om det umiddelbart ser ud som vrøvletekst, har det vist sig, at den faktisk har rod i gamle latinske tekster. Richard McClintock, der var professor i latin ved Hampden-Sydney College i Virginia har opdaget,  <br><br>
+          
+          at ordene kan relateres til en tekst skrevet af Cicero i år 45 f.Kr.. <br><br>
+          
+          Lorem ipsum stammer fra teksten de Finibus Bonorum et Malorum (Det gode og ondes ekstremer), der handler om etik. Den indledende vrøvletekst "Lorem ipsum dolor sit amet...",  <br><br>
+          
+          findes således i de første linjer af værkets afsnit 1.10.32, hvor den lyder: Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.  <br><br>
+          
+          ("Ej heller findes der nogen, som holder af smerten, søger efter den eller vil have den, bare fordi den er smerte.") <br><br>
+  </body>
+</html>
 {% endblock %}

@@ -1,0 +1,30 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  </head>
+  <body>
+        <div id="nav">
+            <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/answers">Questions & Answers</a></li>
+            <li><a href="/plot">Plotting</a></li>
+            <li><a href="/info">Projekt Info</a></li>
+            <li><a href="/data">Show all data</a></li>
+            </ul>
+        </div>
+        <!-- Sidebar -->
+        <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+            <h3 class="w3-bar-item">Plotting</h3>
+            <a href="/food_price_2017" class="w3-bar-item w3-button">Food price in 2017</a>
+            <a href="/hist-product-count" class="w3-bar-item w3-button">Histogram tested products</a>
+            <a href="/graph-canned-2017" class="w3-bar-item w3-button">Price on canned food in 2017</a>
+            <a href="/box-fruit-2013" class="w3-bar-item w3-button">Frugts price in 2013</a>
+        </div>
+  </body>
+</html>
+{% endblock %}

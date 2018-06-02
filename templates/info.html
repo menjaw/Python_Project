@@ -1,0 +1,40 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+        <div id="nav">
+            <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/answers">Questions & Answers</a></li>
+            <li><a href="/plot">Plotting</a></li>
+            <li><a href="/info">Projekt Info</a></li>
+            <li><a href="/data">Show all data</a></li>
+            </ul>
+        </div>
+    <div>
+        <h1>How to run the project</h1>
+        <h4>Read the Project_description.docx for all the details about the project</h4>
+        <p>
+            Dataset is from this site:<br/><br>
+            http://archive.stats.govt.nz/tools_and_services/releases_csv_files/csv-files-for-infoshare.aspx <br/><br>
+            We have used the dataset: Food Price Index: March 2018<br><br>
+            Download dataset:<br><br>
+            https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv<br><br>
+            Getting started:<br><br>
+            1: run requirements.txt<br><br>
+            python -r requirements.txt<br><br>
+            2: run program from terminal:<br><br>
+            python run.py<br><br>
+            (try_file.py er en test fil som ikke benyttes til andet end at afprøve kode)
+        </p>
+        </div>
+    <div>
+    </div>
+  </body>
+</html>
+{% endblock %}

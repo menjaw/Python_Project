@@ -153,18 +153,8 @@ def food_price_2017():
 
 @wv.app.route('/hist-product-count')
 def hist_product_count():
-    """Show how many times each product have been tested (ref question 2)"""
-    hist = pygal.Histogram()
-    hist.title = 'Count of how many time each product have been tested'
-    hist.add('Apples, 1kg', [(142, 0, 1)])
-    hist.add('Apricots, dried, 100g', [(81, 1, 2)])
-    hist.add('Avocado, 1kg', [(134, 2, 3)])
-    hist.add('Bacon - middle rashers, 700g', [(46, 3, 4)])
-    hist.add('Beef steak - blade, 1kg', [(142, 4, 5)])
-    hist.add('Berries, frozen, 500g', [(134, 5, 6)])
-    hist.add('Breakfast drink, 250ml, 6 pack', [(45, 6, 7)])
-    hist.add('Fresh herbs, packaged, chilled', [(6, 7, 8)])
-    return hist.render_response()
+    restult = pt.exec_plot2()
+    return restult.render_response()
 
 @wv.app.route('/box-fruit-2013')
 def box_fruit_2013():

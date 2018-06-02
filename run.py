@@ -7,7 +7,7 @@ import webget
 
 url = 'https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv'
 file_name = "food-price.csv.tsv"
-webget.download(url,file_name)
+#webget.download(url,file_name)
 
 df = pd.read_csv(file_name, sep='\t')
 
@@ -151,10 +151,15 @@ def test():
     lettuce = qst.excec_test(data,df)
     return wv.render_template('answers.html', data=lettuce.to_html(), title = title)
 
-@wv.app.route('/food_price_2017')
-def food_price_2017():
-    result = pt.food_price_2017(df)
-    return wv.Response(response=result.render(),content_type='image/svg+xml')
+@wv.app.route('/food_prices_2017')
+def food_prices_2017():
+    prices = pt.food_prices_2017(df)
+    return prices.render_response()
+
+@wv.app.route('/frugt_prices_2003_2013')
+def frugt_prices_2003_2013():
+    prices = pt.frugt_prices_2003_2013(df)
+    return prices.render_response()
 
 @wv.app.route('/hist_product_count')
 def hist_product_count():

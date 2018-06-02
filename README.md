@@ -15,6 +15,15 @@
 #### https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv 
 
 
+### Dependencies & Info
+
+The following dependencies should be installed on your system, either via conda install of pip install through your terminal:
+
+- pandas
+- webget
+- pygal
+- Flask
+
 
 ## Getting started:
 

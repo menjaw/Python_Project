@@ -1,7 +1,7 @@
 import pygal
 import pandas as pd
 
-def exec_plot1(df):    
+def food_price_2017(df):    
     # choice a datetime
     period = 2018.03
 
@@ -79,7 +79,7 @@ def filter_price(cat, period,df):
     foods_price = float(foods_df['Data_value'].values)
     return foods_price
 
-def exec_plot2():
+def hist_product_count():
     """Show how many times each product have been tested (ref question 2)"""
     hist = pygal.Histogram()
     hist.title = 'Count of how many time each product have been tested'
@@ -92,3 +92,26 @@ def exec_plot2():
     hist.add('Breakfast drink, 250ml, 6 pack', [(45, 6, 7)])
     hist.add('Fresh herbs, packaged, chilled', [(6, 7, 8)])
     return hist
+
+def box_fruit_2013():
+    """Show the product prices in 2013"""
+    box_plot = pygal.Box()
+    box_plot.title = 'Fruit prices in 2013'
+    box_plot.add('Kiwi, 1 kg', [1.90, 1.97, 2.00, 2.07, 2.32, 2.45, 3.16, 4.38, 4.73, 5.12, 5.96, 6.19])
+    box_plot.add('Apple, 1 kg', [2.25, 2.33, 2.37, 2.41, 2.56, 2.58, 2.72, 2.96, 3.24, 3.60, 3.81, 4.12])
+    box_plot.add('Banana, 1 kg', [2.53, 2.54, 2.55, 2.56, 2.64, 2.65, 2.67, 2.67, 2.67, 2.68, 2.78, 2.80])
+    box_plot.add('Lettuce, 1 kg', [2.55, 2.61, 2.77, 2.85, 3.07, 3.56, 3.65, 3.74, 4.23, 6.56, 6.73, 9.18])
+    return box_plot
+
+def graph_canned_2017():
+    """Show prices at canned food in 2017"""
+    graph = pygal.Line()
+    graph.title = 'Prices on canned food in 2017'
+    graph.x_label = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul",
+                     "Aug", "Sep", "Oct", "Nov", "Dec"]
+    graph.add('Tuna, 185g', [2.52, 2.48, 2.50, 2.39, 2.60, 2.46, 2.53, 2.46, 2.39, 2.50, 2.58, 2.47])
+    graph.add('Peaches, 410g', [1.65, 1.64, 1.62, 1.53, 1.66, 1.57, 1.56, 1.65, 1.59, 1.39, 1.58, 1.44])
+    graph.add('Spaghetti, 420 g', [1.53, 1.56, 1.52, 1.40, 1.41, 1.45, 1.33, 1.47, 1.47, 1.42, 1.51, 1.50])
+    graph.add('Tomato sauce, 560g', [3.15, 2.96, 2.90, 2.58, 2.99, 2.82, 2.64, 2.84, 2.92, 2.71, 2.78, 2.84])
+    graph.add('Soup 500g', [3.46, 3.36, 3.18, 2.92, 2.91, 2.81, 2.79, 2.76, 2.72, 3.31, 3.42, 3.49])
+    return graph

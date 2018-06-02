@@ -31,8 +31,6 @@ The following dependencies should be installed on your system, either via conda 
 ### 2: run program from terminal:
 - python run.py
 
-(try_file.py er en test fil som ikke benyttes til andet end at afprøve kode)
-
 ## Dataset 1 (weighted-average-prices)
 #### Question 1
 - How many products have been tested?

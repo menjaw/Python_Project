@@ -1,7 +1,26 @@
 import pygal
 import pandas as pd
 
-def food_price_2017(df):    
+def frugt_prices_2003_2013(df):
+    line_chart = pygal.Bar()
+    line_chart.title = 'Frugt prices per kg between 2003 - 2013 $'
+    line_chart.x_labels = map(str, range(2003,2014))
+    oranges_mask = (df['Series_title_1'] == 'Oranges, 1kg') & (df['Period'] >= 2003)& (df['Period'] <= 2013)
+    bananas_mask = (df['Series_title_1'] == 'Bananas, 1kg') & (df['Period'] >= 2003)& (df['Period'] <= 2013)
+    apples_mask = (df['Series_title_1'] == 'Apples, 1kg') & (df['Period'] >= 2003)& (df['Period'] <= 2013)
+    oranges_data = df[oranges_mask]
+    bananas_data = df[bananas_mask]
+    apples_data = df[apples_mask]
+    oranges_res = oranges_data['Data_value'][:11].values
+    bananas_res = bananas_data['Data_value'][:11].values
+    apples_res = apples_data['Data_value'][:11].values
+    line_chart.add('Oranges',oranges_res)
+    line_chart.add('Bananas',bananas_res)
+    line_chart.add('Apples',apples_res)
+    line_chart.render_to_file('./Plotting/frugt_prices_2003_2013.svg')   
+    return line_chart
+
+def food_prices_2017(df):    
     # choice a datetime
     period = 2018.03
 
@@ -69,6 +88,7 @@ def food_price_2017(df):
     pie_chart.add(h_title, h_pct)
     pie_chart.add(i_title, i_pct)
     pie_chart.add(j_title, j_pct)
+    pie_chart.render_to_file('./Plotting/foods_prices_2017.svg')  
     # return the pie chart to the page
     return pie_chart
 
@@ -91,6 +111,7 @@ def hist_product_count():
     hist.add('Berries, frozen, 500g', [(134, 5, 6)])
     hist.add('Breakfast drink, 250ml, 6 pack', [(45, 6, 7)])
     hist.add('Fresh herbs, packaged, chilled', [(6, 7, 8)])
+    hist.render_to_file('./Plotting/hist_product_count.svg')   
     return hist
 
 def box_fruit_2013():
@@ -101,6 +122,7 @@ def box_fruit_2013():
     box_plot.add('Apple, 1 kg', [2.25, 2.33, 2.37, 2.41, 2.56, 2.58, 2.72, 2.96, 3.24, 3.60, 3.81, 4.12])
     box_plot.add('Banana, 1 kg', [2.53, 2.54, 2.55, 2.56, 2.64, 2.65, 2.67, 2.67, 2.67, 2.68, 2.78, 2.80])
     box_plot.add('Lettuce, 1 kg', [2.55, 2.61, 2.77, 2.85, 3.07, 3.56, 3.65, 3.74, 4.23, 6.56, 6.73, 9.18])
+    box_plot.render_to_file('./Plotting/box_fruit_2013.svg')
     return box_plot
 
 def graph_canned_2017():
@@ -114,4 +136,6 @@ def graph_canned_2017():
     graph.add('Spaghetti, 420 g', [1.53, 1.56, 1.52, 1.40, 1.41, 1.45, 1.33, 1.47, 1.47, 1.42, 1.51, 1.50])
     graph.add('Tomato sauce, 560g', [3.15, 2.96, 2.90, 2.58, 2.99, 2.82, 2.64, 2.84, 2.92, 2.71, 2.78, 2.84])
     graph.add('Soup 500g', [3.46, 3.36, 3.18, 2.92, 2.91, 2.81, 2.79, 2.76, 2.72, 3.31, 3.42, 3.49])
+    graph.render_to_file('./Plotting/graph_canned_2017.svg')
     return graph
+

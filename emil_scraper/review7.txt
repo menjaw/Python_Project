@@ -1,0 +1,112 @@
+Review 7: Final reflections
+
+When scraping a website I need to be careful upholding the terms, as there might not be any terms towards scraping the website: Nyse.com, there are ethical terms, such as:
+- Not stressing the server, don't want to make it look like a DDOS attack.
+- Not claiming the data as my own.
+- Normally a data scientist should strive to use a API if one is available, I had to scrape due to exam project.
+- Save the data I absolutely need from your page. If all I need it OpenGraph meta-data, that’s all I’ll keep.
+And many more.
+
+If i could change anything i would probably look at the loop 
+
+Do error handling if there is no data in the quote, right now I know the only one happens at https://www.nyse.com/quote/XASE:AJAX so i just skip that one. If i had more time i would probably do:
+except NoSuchElementException:
+        raise
+and do some error logic so it jumps back into the loop, that way its more dynamic
+
+===============
+
+Review 6: https://github.com/menjaw/Python_Project/commit/d672cdad9f5fc4bc4d179cafb4e7298dec844e9b#comments
+
+I think we should figure out a better way to use pygal.pie() the comparrison to which your adding the pct, doesn't really show much, the only thing its showing is that oranges had a certain % of price where 100% is 9 other different kind of foods which price varies a lot from eachother.
+
+I think a better way to use pygal.pie() would be to sum up the prices for each year then add them all together and show that in i.e. 2015 the total sum was xxx.xx of (total_sum(2006-2018)) that way you can see the wether or not 2015 was better or worse than 2016 and so forth.
+
+Best Regards!
+
+===============
+
+Review 5:https://github.com/menjaw/Python_Project/commit/b45092fd49e11424baa7e8e15d8f1fbd32efa276#comments
+
+In regards to previous review, We should really consider gather all questions to one file and try to optimize the code to be as automatic as possible. I suppose the question was already answered since you answered the question with very specific numbers? Its not "the pythonic way" to read the input manually and plot the data as so. I will, over the next days be refactoring the code to 1 file, then import to run.py to render the data. I hope to make it as automatic as possible so we dont have to first answer the question, then read the console for input and manually plot in the data with box_plot.add([])
+This would also cut down on the initialisation of the flask instance, since we would just do it once in the run.py method and render with the return from the class/method that we will be doing.
+Also we dont have app.run with multiple ports, all will be rendered in 1 application.
+
+Best Regards!
+
+================
+
+Review 4:https://github.com/menjaw/Python_Project/commit/44b7d2908655cb2b490e2606aa11976abd10d068#comments
+
+Remember to keep the git commit relevant to the code that has been commited/edited, this way its easy to revert back and review the code, if a future screw-up should happen, it is also very easy to roll back to the right commit without much code auto-refactoring.
+
+A good practise is to do commits early and often, even if the code is not completely finished or the best way. No one is going to believe that your work sprung complete from your mind into the repository in utter perfection with each concept fully thought out, its okay to review it and come back and rework it.
+
+================
+
+Review 3:https://github.com/menjaw/Python_Project/commit/5679268b04e320b51febd37362bf18edf54b87dd#comments
+
+Question states: Show the top 10 most expensive food products.
+Would love some more detailed plotting, i.e.
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.arange(10)
+
+plt.plot(Fresh fish, 1kg)
+plt.plot(Beef steak - porterhouse/sirloin, 1kg)
+plt.plot(Avocado, 1kg)
+plt.plot(Capsicums, green, else red, 1kg)
+...
+
+plt.legend(['y = Fish', 'y = Beef steak', 'y = Avocado', 'y = Capiscums'], loc='upper left')
+
+plt.show()
+
+or you could do a pillar diagram:
+import pylab as pl
+import datetime
+
+data = "
+Fresh fish, 1kg
+Beef steak - porterhouse/sirloin, 1kg
+Avocado, 1kg
+Capsicums, green, else red, 1kg
+"
+
+values = []
+dates = []
+
+for line in data.split("\n"):
+x, y = line.split()
+values.append(int(x))
+
+fig = pl.figure()
+ax = pl.subplot(111)
+ax.bar(dates, values, width=100)
+
+Its rough examples and would need some "polishing" before they would be useful.
+But they all represent a visual presentation of answering Question 8.
+
+Best Regards!
+
+================
+
+Review 2:https://github.com/menjaw/Python_Project/commit/79099c6e14fa0855cd0c7802436fe60a69873c1c#comments
+
+I think we should keep the app routes to one file, this way it gives a better overview of which urls we are working with, if we have multiple files for each plotting with their own route, we'r going to have to look through all the files to find the desired url.
+
+Best Regards!
+
+================
+
+Review 1:https://github.com/menjaw/Python_Project/commit/44b68b93ce05b96530b0c54eb1361f3d6dd32d63#comments
+
+It is very hard to decode what is actually going on, you'r commit indicates a added/imported code to create a pie chart, where the actual git log shows 48 deleted lines.
+
+In case of refactoring, the git commit should state so.
+
+Maybe try to split up, so when refactoring you ONLY refactor the needed code, when done, git add, git commit and git push, that way the commits will be more precise for future development.
+
+Best Regards!

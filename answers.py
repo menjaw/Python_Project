@@ -1,7 +1,21 @@
-import line_chart_plot as lcp
+import pandas as pd
+
+df = pd.read_csv('food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv', sep='\t')
+
+# Create dictionary with the wanted columns
+data = {
+    'ref': df['Series_reference'],
+    'Period': df['Period'],
+    'Price': df['Data_value'],
+    'Product': df['Series_title_1'],
+    'Amount': 0
+}
+
 
 """Question 1 - How many products have been tested?"""
 # Should/could be answered with a pie chart
+total_amount = len(df.drop_duplicates(['Series_title_1']))
+print(total_amount)
 
 """Question 2 - How many times have each product been tested?"""
 # Should/could be answered with a bar diagram.

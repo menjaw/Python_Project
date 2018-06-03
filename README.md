@@ -30,3 +30,7 @@ The following dependencies should be installed on your system, either via conda 
 
 ### 2: run program from terminal:
 - python run.py
+### 3: run scraper:
+- create new virtual environment using conda.
+- source activate new environment 
+- do: "conda install -c conda-forge selenium" to use the selenium library

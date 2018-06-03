@@ -1,0 +1,25 @@
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+  </head>
+  <body>
+<ul>
+  <li><a href="/">/root</a></li>
+  <li><a href="/ip">IP test page</a></li>
+  <li><a href="/faq">Questions & Answers</a></li>
+  <li><a href="/map">World Map</a></li>
+  <li><a href="/info">Projekt Info</a></li>
+</ul>
+
+    <div>
+    <h1>Welcome <a href="/ip">{{ip}}</a><br/>- to the /root page</h1>
+    </div>
+    <div>
+    </div>
+  </body>
+</html>
+{% endblock %}

@@ -1,6 +1,7 @@
 from selenium import webdriver
 from time import sleep
 from selenium.common.exceptions import NoSuchElementException
+import scraper_class as sc
 
 
 # Setting up the variables
@@ -9,7 +10,8 @@ file_name = './quote.csv'
 page_number = 2
 backup_list = []
 # Setting the driver to Chrome
-driver = webdriver.Chrome('./chromedriver')
+driver = sc.Scraper.setChromeDriver(path='./chromedriver')
+# driver = webdriver.Chrome('./chromedriver')
 # Sets the URL in browser to String url
 driver.get(url)
 # Close modal

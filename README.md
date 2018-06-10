@@ -21,7 +21,6 @@ The following dependencies should be installed on your system, either via conda 
 - pandas
 - pygal
 - Flask
-- webget(this dependenty can you get after you clone the project)
 
 ## Getting started:
 

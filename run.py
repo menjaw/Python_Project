@@ -5,9 +5,9 @@ import plot as pt
 import questions as qst
 import webget
 
-url = 'https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv'
+#url = 'https://raw.githubusercontent.com/menjaw/Python_Project/master/food-price-index-mar18-weighted-average-prices-csv-tables.csv.tsv'
 file_name = "food-price.csv.tsv"
-#webget.download(url,file_name)
+
 
 df = pd.read_csv(file_name, sep='\t')
 
